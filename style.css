@@ -1,0 +1,120 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    font-family: sans-serif;
+    flex-direction: column;
+}
+
+.calculator {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 320px;
+}
+
+.display {
+    background-color: #222;
+    color: white;
+    padding: 20px;
+    text-align: right;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.display .history {
+    font-size: 0.8em;
+    color: #bbb;
+    height: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.display .result {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1px;
+}
+
+.buttons button {
+    background-color: #f9f9f9;
+    border: none;
+    padding: 20px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.buttons button:hover {
+    background-color: #eee;
+}
+
+.buttons button.operator {
+    background-color: #f0ad4e;
+    color: white;
+}
+
+.buttons button.operator:hover {
+    background-color: #ec971f;
+}
+
+.buttons button.function {
+    background-color: #5bc0de;
+    color: white;
+}
+
+.buttons button.function:hover {
+    background-color: #31b0d5;
+}
+
+.buttons button.zero {
+    grid-column: span 2;
+}
+
+.buttons button.equal {
+    background-color: #5cb85c;
+    color: white;
+    grid-row: span 2;
+    grid-column: 5 / 6;
+}
+
+.buttons button.equal:hover {
+    background-color: #449d44;
+}
+
+
+.solution-steps {
+    margin-top: 20px;
+    width: 320px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.solution-steps h3 {
+    margin-top: 0;
+}
+
+#steps-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#steps-list li {
+    padding: 5px 0;
+    border-bottom: 1px solid #eee;
+}
+
+#steps-list li:last-child {
+    border-bottom: none;
+}
