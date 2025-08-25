@@ -23,10 +23,14 @@ document.addEventListener('DOMContentLoaded', () => {
             button.textContent = btn;
             button.dataset.value = btn;
 
-            if (['+', '-', '×', '÷'].includes(btn)) {
+            if (['+', '-', '×', '÷', '^'].includes(btn)) {
                 button.classList.add('operator');
-            } else if (['sin', 'cos', 'tan', 'log', '√', 'x²'].includes(btn)) {
+            } else if (scientificFunctions.includes(btn)) {
                 button.classList.add('function');
+            } else if (btn === 'C') {
+                button.classList.add('clear-all');
+            } else if (btn === 'CE') {
+                button.classList.add('clear-entry');
             } else if (btn === '=') {
                 button.classList.add('equal');
             } else if (btn === '0') {

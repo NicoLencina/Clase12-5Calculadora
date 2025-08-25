@@ -3,97 +3,98 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #f0f0f0;
-    font-family: sans-serif;
+    background-color: #d1d1d1; /* Lighter grey background for contrast */
+    font-family: 'Arial', sans-serif;
     flex-direction: column;
 }
 
 .calculator {
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 320px;
+    border: 2px solid #1a1a1a;
+    border-radius: 8px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+    background-color: #3d3d3d; /* Casio dark grey body */
+    width: 340px;
+    padding: 15px;
 }
 
 .display {
-    background-color: #222;
-    color: white;
-    padding: 20px;
+    background-color: #c8e6c9; /* LCD green */
+    color: #1a1a1a; /* Dark text */
+    padding: 15px 20px;
     text-align: right;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    border-radius: 5px;
+    border: 2px solid #2a2a2a;
+    margin-bottom: 15px;
+    font-family: 'Courier New', Courier, monospace;
+    box-shadow: inset 2px 2px 5px rgba(0,0,0,0.2);
 }
 
 .display .history {
-    font-size: 0.8em;
-    color: #bbb;
-    height: 20px;
+    font-size: 0.9em;
+    color: #333;
+    height: 22px;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
 }
 
 .display .result {
-    font-size: 2em;
+    font-size: 2.2em;
     font-weight: bold;
 }
 
 .buttons {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    gap: 1px;
+    gap: 8px; /* More space between buttons */
 }
 
 .buttons button {
-    background-color: #f9f9f9;
-    border: none;
-    padding: 20px;
-    font-size: 1.2em;
+    background-color: #6d6d6d; /* Darker grey buttons */
+    color: #f0f0f0;
+    border: 1px solid #2a2a2a;
+    border-radius: 4px;
+    padding: 15px 10px;
+    font-size: 1.1em;
+    font-weight: bold;
     cursor: pointer;
-    transition: background-color 0.2s;
+    transition: all 0.1s ease;
+    box-shadow: 0px 2px 2px rgba(0,0,0,0.3);
 }
 
-.buttons button:hover {
-    background-color: #eee;
+.buttons button:active {
+    transform: translateY(2px);
+    box-shadow: none;
 }
 
+/* Specific button colors inspired by Casio */
 .buttons button.operator {
-    background-color: #f0ad4e;
-    color: white;
-}
-
-.buttons button.operator:hover {
-    background-color: #ec971f;
+    background-color: #4a4a4a;
 }
 
 .buttons button.function {
-    background-color: #5bc0de;
+    background-color: #5a5a5a;
+}
+
+/* Casio uses orange/red for AC and CE */
+.buttons button.clear-all, .buttons button.clear-entry {
+    background-color: #f08030;
     color: white;
 }
 
-.buttons button.function:hover {
-    background-color: #31b0d5;
+.buttons button.equal {
+    background-color: #4CAF50; /* Green for equals */
+    grid-row: span 2;
+    grid-column: 5 / 6;
 }
 
 .buttons button.zero {
     grid-column: span 2;
 }
 
-.buttons button.equal {
-    background-color: #5cb85c;
-    color: white;
-    grid-row: span 2;
-    grid-column: 5 / 6;
-}
-
-.buttons button.equal:hover {
-    background-color: #449d44;
-}
-
-
 .solution-steps {
     margin-top: 20px;
-    width: 320px;
+    width: 340px;
     padding: 15px;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -113,6 +114,7 @@ body {
 #steps-list li {
     padding: 5px 0;
     border-bottom: 1px solid #eee;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 #steps-list li:last-child {
